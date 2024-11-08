@@ -9,7 +9,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, origins=["https://mysafedraw.site"])  # 특정 도메인만 허용
+CORS(app)
 
 # 모델 로드
 model = load_model('model.h5')
@@ -78,4 +78,4 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0',port=5000)
